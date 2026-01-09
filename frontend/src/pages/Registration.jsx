@@ -29,8 +29,10 @@ function Registration() {
         setLoading(true)
         e.preventDefault()
         try {
+
+              console.log("SERVER URL ", serverUrl);
          const result = await axios.post(serverUrl + '/api/auth/registration',{
-            name,email,password
+           username:name,email,password
          },{withCredentials:true})
             getCurrentUser()
             navigate("/")
@@ -99,4 +101,4 @@ function Registration() {
   )
 }
 
-export default Registration
+export default Registration  
